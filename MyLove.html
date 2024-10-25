@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8c8dc; /* Fondo pastel */
+            font-family: 'Times New Roman', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            flex-direction: column;
+        }
+        .container {
+            max-width: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flower {
+            width: 150px; /* Ajusta el tamaño de las flores según lo necesites */
+            height: auto;
+            margin: 0 60px; /* Espacio entre las flores y el texto */
+        }
+        .button {
+            background-color: #d4a5a5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #b27f7f;
+        }
+        .link {
+            color: #000;
+            text-decoration: none;
+        }
+        .link:hover {
+            color: #0000ff;
+        }
+        .carta-container {
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 20px;
+            width: 600px;
+            text-align: left;
+        }
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .flower, .button, .carta-container, h1, h2, p {
+            animation: fadeIn 2s ease-in;
+        }
+        .flower {
+            animation: slideIn 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Primera pantalla -->
+    <div id="step1">
+        <div class="container">
+            <img src="Rosa1.png" alt="Flor Roja" class="flower">
+            <h1>¿Quieres saber por qué me haces feliz?💖</h1>
+            <img src="Rosa1.png" alt="Flor Roja" class="flower">
+        </div>
+        <button class="button" onclick="showStep2()">¡Click aquí mi reina!</button>
+        <p><a href="https://www.facebook.com/leandro.xilot" class="link">De tu novio y futuro esposo</a></p>
+    </div>
+
+    <!-- Segunda pantalla: Sobre -->
+    <div id="step2" style="display: none;">
+        <h1>¡Haz click en el sobre para abrirlo!</h1>
+        <img src="sobre.png" alt="Sobre cerrado" class="img-fluid" style="width: 300px;" onclick="showStep3()">
+    </div>
+
+    <!-- Tercera pantalla: Carta -->
+    <div class="carta-container" id="step3" style="display: none;">
+        <div class="carta-header">
+            <h2>Hola Mi Reyna. 💕</h2>
+        </div>
+        <div class="carta-content">
+            <p>Simplemente queria hacerte este detalle, no es mucho pero hizo lo que pude, quize usar mis pocos conocimiento 
+            y habilidades en la programación para hacerte esta carta virtual y darte a conocer lo que me haces sentir y el porque
+            me haces feliz.💖
+
+            Me siento tan comodo contigo, hace mucho tiempo que me sentía perdido, pero desde que llegaste a mi vida
+            ya no me siento de esa manera, gracias ti estoy mucho mejor que antes, me hace feliz todo lo que tenga que
+            ver contigo, tus besos, tus abrazos, tus caricias, tu voz, tus ojos, tu cabello, definitivamente me gusta todo 
+            de ti, sea como sea me gustas, me encantas, ya sea desmaquillada, recien levantada, areglada, como sea a mi
+            me encantas, cada detalle, cada palabra bonita, cada mensaje, cada te amo, me haces sentir la persona más afortunda y preciada del mundo
+            te amo como no te imaginas.💖
+
+            No quiero apartarme de tu lado, quiero quedarme contigo por el resto de mi vida. Quiero que esto sea más que una
+            simple relación bonita, quiero estar contigo en cualquier momento, sea bueno o sea malo pero que sea contigo
+            quiero superarme y que tu estes aqui para verlo y vivirlo, quiero estar contigo en tus logros y metas, quiero
+            quedarme contigo porque me haces sentir muy bien, me haces sentir feliz y seguro.💖
+
+            Te amo y no te quiero perder por nada en el mundo por favor nunca me dejes de amar, quiero estar contigo y ser el
+            hombre de tu vida.💖
+
+            </p>
+            <p>Gracias por llegar a mi vida. Te amooooooo. 💖</p>
+            <a href="https://youtu.be/zCVwym_awzs" class="link">Para ti mi reina. 💕</a>
+        </div>
+    </div>
+
+    <!-- Reproductor de audio para la canción -->
+    <audio id="song" autoplay loop>
+        <source src="C:\ProgramData\aTubeCatcher\Serendipity (Full Length Edition) [1].MP3" type="audio/mp3">
+    </audio>
+
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function showStep2() {
+            document.getElementById("step1").style.display = "none";
+            document.getElementById("step2").style.display = "block";
+        }
+
+        function showStep3() {
+            document.getElementById("step2").style.display = "none";
+            document.getElementById("step3").style.display = "block";
+            document.getElementById("song").play(); // Reproducir la canción al mostrar la carta
+        }
+    </script>
+</body>
+</html>
